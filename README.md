@@ -1,6 +1,6 @@
 # C-Study
 
-##C++ 구현 
+## C++ 구현 
 
 -Linked List
 -Binary Search Tree
