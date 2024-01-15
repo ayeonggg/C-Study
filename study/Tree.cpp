@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    List list;
+    Tree tree;
     std::shared_ptr<TreeNode> root = nullptr;
 
     int Num;
@@ -16,7 +16,7 @@ int main() {
                 std::cout << "Enter the data to add: ";
                 int addData;
                 std::cin >> addData;
-                root = list.add(root, addData);
+                root = tree.add(root, addData);
                 list.print(root);
                 break;
             }
@@ -24,7 +24,7 @@ int main() {
                 std::cout << "Enter the data to delete: ";
                 int removeData;
                 std::cin >> removeData;
-                root = list.remove(root, removeData);
+                root = tree.remove(root, removeData);
                 list.print(root);
                 break;
             }
@@ -32,15 +32,15 @@ int main() {
                 std::cout << "Enter the data to search: ";
                 int searchData;
                 std::cin >> searchData;
-                auto result = list.search(root, searchData);
+                auto result = tree.search(root, searchData);
                 if (result != nullptr) {
                     std::cout << "Found: " << result->data << std::endl;
                 }
                 try {
                     // Your code inside the try block
-                    auto result = list.search(root, searchData);
+                    auto result = tree.search(root, searchData);
                     if (result == nullptr) {
-                        throw runtime_error("Not Found"); //Node가 전부 nullstr일때 search()했을 경우 예외처리
+                        throw runtime_error("Not Found"); //Node가 전부 nullstr일때 search함수 호출시 예외 처리
                     }
                 } catch (const runtime_error& e) {
                     cout << e.what() << endl;
