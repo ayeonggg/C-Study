@@ -65,7 +65,7 @@ public:
         }
 
         delNode = prevNode->link;
-        prevNode->link = delNode->link;
+        prevNode->link=nullptr;
         delete delNode;
 
         std::cout << deldata << " data node deleted" << std::endl;

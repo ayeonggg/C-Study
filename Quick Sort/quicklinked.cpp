@@ -6,7 +6,7 @@ int main() {
 
     int Num;
     do {
-        std::cout << "Enter the operation number:\n 1.add 2.remove 3.search 4.quicksort (Any other number to finish) ";
+        std::cout << "Enter the operation number:\n 1.add 2.delete 3.search 4.quicksort (Any other number to finish) ";
         std::cin >> Num;
 
         switch (Num) {
@@ -14,7 +14,7 @@ int main() {
                 std::cout << "Enter the data to add: ";
                 int addData;
                 std::cin >> addData;
-                list.addNode(addData);
+                list.addNode(addData); 
                 list.printList();
                 break;
             }
@@ -22,7 +22,7 @@ int main() {
                 std::cout << "Enter the data to delete: ";
                 int deleteData;
                 std::cin >> deleteData;
-                list.deleteThisNode(deleteData);
+                list.deleteThisNode(deleteData); //첫 번째 숫자 삭제 불가
                 list.printList();
                 break;
             }
