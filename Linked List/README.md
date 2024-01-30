@@ -1,4 +1,4 @@
-##Linked List    
+  ##Linked List    
 
     searchNode(HeadNode* H, int thisdata); #리스트에 들어있는 숫자를 검색하는 함수
     addThisNode(HeadNode* H, int afterthisdata, int adddata); #숫자를 입력할 수 있는 함수
