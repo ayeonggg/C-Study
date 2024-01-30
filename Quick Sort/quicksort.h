@@ -6,7 +6,8 @@ private:
     Node* link;
 
     Node(int value) : data(value), link(nullptr) {}
-    friend class List; //List클래스에서 Node클래스의 멤버에 접근할 수 있도록
+
+    friend class List; //List클래스에서 Node클래스의 멤버에 접근 가능
 };
 
 class List {
@@ -108,7 +109,7 @@ public:
         std::cout << "Linkedlist = ( ";
         p = head;
 
-        while (p != nullptr) {
+        while (p != nullptr) { //마지막 노드에 도달하기 전까지 반복
             std::cout << p->data;
             p = p->link;
             if (p != nullptr) std::cout << " --> ";
@@ -116,8 +117,9 @@ public:
         std::cout << " )" << std::endl;
     }
 
-    Node* getLastNode() {
+    Node* getNode() {
         Node* lastNode = head;
+        //리스트의 끝까지 이동
         while (lastNode != nullptr && lastNode->link != nullptr) {
             lastNode = lastNode->link;
         }
@@ -128,17 +130,17 @@ public:
         int pivot = high->data;
         Node* i = low;
         
-        for (Node* j = low; j != high; j = j->link) {
-            if (j->data < pivot) {
-                std::swap(i->data, j->data);
-                i = i->link;
+        for (Node* j = low; j != high; j = j->link) { //high 이전까지 반복
+            if (j->data < pivot) { //high가 가르키는 값이 pivot보다 작으면
+                std::swap(i->data, j->data); //i와 j가 가르키는 값 교환
+                i = i->link; //i다음 위치로 이동
             }
         }
         std::swap(i->data, high->data);
         return i;
     }
 
-    void quickSortUtil(Node* low, Node* high) {
+    void quickSortUtil(Node* low, Node* high) { //퀵정렬 작은부분 재귀 호출
         if (low != nullptr && high != nullptr && low != high && low->link != high) {
             Node* pivot = partition(low, high);
             quickSortUtil(low, pivot);
@@ -147,7 +149,7 @@ public:
     }
 
     void quickSort() {
-        Node* lastNode = getLastNode();
+        Node* lastNode = getNode();
         quickSortUtil(head, lastNode);
     }
 };
