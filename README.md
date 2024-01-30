@@ -11,10 +11,10 @@
   +delete메모리 해제 연산자로 사용. 변수명으로 설정 시 오류 발생
  
 ## Linked List
-
  내부 폴더의 README파일 참고
  
 ## Binary Search Tree
-
  내부 폴더의 README파일 참고
     
+## Quick Sort
+ Linked List의 헤더 파일 수정 후 사용
