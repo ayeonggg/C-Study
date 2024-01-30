@@ -1,7 +1,7 @@
 #include <iostream>
 
 class Node {
-private:
+private: 
     int data;
     Node* link;
 
@@ -11,9 +11,9 @@ private:
 };
 
 class List {
-public:
+private:
     Node* head;
-
+public:
     List() : head(nullptr) {}
 
     void addNode(int x) {
@@ -59,14 +59,13 @@ public:
             prevNode = prevNode->link;
         }
 
-        if (prevNode->link == nullptr) {
-            std::cout << "Node with data " << deldata << " not found." << std::endl;
-            return;
-        }
+        //if (prevNode->link == nullptr) {
+        //    std::cout << "Node with data " << deldata << " not found." << std::endl;
+        //   return;
+        //}
 
         delNode = prevNode->link;
-        prevNode->link=nullptr;
-        delete delNode;
+        prevNode->link=delNode->link;
 
         std::cout << deldata << " data node deleted" << std::endl;
     }
