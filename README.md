@@ -21,3 +21,6 @@
 
 ## Merge Sort
  vector 라이브러리 사용
+ 
+    push_back(pushdata); #vector에서 가장 뒤에 값을 추가
+    pop_back(popdata); #vector에서 가장 뒤에 있는 값을 뺌
