@@ -18,3 +18,6 @@
     
 ## Quick Sort
  Linked List의 헤더 파일 수정 후 사용
+
+## Merge Sort
+ vector 라이브러리 사용
